@@ -1,0 +1,77 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  height: 100vh;
+  background-color: lightslategray;
+  padding: 30px;
+}
+
+h1{
+  font-size: 2rem;
+}
+
+.container{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.container>h1{
+  margin-bottom: 30px;
+}
+
+.list__container{
+  margin-left: 40px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.list__container ul{
+  list-style: disc;
+}
+
+.list__container ul .list__item-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;  
+}
+
+.list__container ul .list__item-container .arrow_container{
+  flex-basis: 10%;
+}
+
+.list__container ul .list__item-container .action_container{
+flex-basis: 90%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+cursor: pointer;
+}
+
+.list__container ul li {
+  margin-top: 10px;
+  font-family: 'Caveat', cursive;
+  font-size: 25px;
+}
+
+.list__container ul span {
+  border: solid;
+  padding: 3px;
+}
+
+.list__container ul li.list__item--completed{
+  text-decoration-line: line-through;
+}
+
+.form__container {
+  margin-top: 40px;
+}
