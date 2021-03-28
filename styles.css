@@ -9,12 +9,8 @@ body{
   font-family: 'Open Sans', sans-serif;
   width: 100%;
   height: 100vh;
-  background-color: lightslategray;
+  background-color: #717171;
   padding: 30px;
-}
-
-h1{
-  font-size: 2rem;
 }
 
 .container{
@@ -23,55 +19,76 @@ h1{
   flex-direction: column;
 }
 
-
-.container>h1{
-  margin-bottom: 30px;
+.form__container {
+  margin-bottom: 2rem;
 }
 
-.list__container{
-  margin-left: 40px;
-  text-align: left;
-  margin-top: 20px;
+#todo__form{
+  display: flex;
 }
 
-.list__container ul{
-  list-style: disc;
+form > input[type="text"] {
+  height: 42px;
+  width: 100%;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  background-color: #545454;
+  color: #fcfcfc;
+  font-size: 20px;
+  padding: 10px;
+  border-right: 0px;
 }
 
-.list__container ul .list__item-container{
+form > input[type="submit"] {
+  height: 42px;
+  width: 42px;
+  background-color: #fcfcfc;
+  color: black;
+  font-size: 20px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border: 0px;
+} 
+
+input[type="checkbox"] {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+}
+
+.list__container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.list__container ul li {  
+  height: 38px;
+  width: 100%;
+  font-family: 'Caveat', cursive;
+  border-radius: 4px;
+  background-color: #fcfcfc;
+  color: #5d5c5a;
+  font-size: 20px;
+  margin-bottom: 6px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  cursor: pointer;  
+  justify-content: flex-start;
+  cursor: pointer;
+  padding: 5px;
 }
 
-.list__container ul .list__item-container .arrow_container{
-  flex-basis: 10%;
-}
-
-.list__container ul .list__item-container .action_container{
-flex-basis: 90%;
-display: flex;
-align-items: center;
-justify-content: space-between;
-cursor: pointer;
-}
-
-.list__container ul li {
-  margin-top: 10px;
-  font-family: 'Caveat', cursive;
-  font-size: 25px;
-}
-
-.list__container ul span {
-  border: solid;
-  padding: 3px;
+.list__container ul li span {
+  margin-left: auto;
+  padding: 7px;
 }
 
 .list__container ul li.list__item--completed{
-  text-decoration-line: line-through;
-}
+  text-decoration: line-through;
+} 
 
-.form__container {
-  margin-top: 40px;
+@media screen and (min-width: 1024px) {
+  .container { 
+    max-width: 900px;
+    margin: 0px auto;
+  }
 }
