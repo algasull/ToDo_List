@@ -14,7 +14,7 @@ body{
   padding: 30px;
 }
 
-.container{
+.container {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -24,7 +24,7 @@ body{
   margin-bottom: 2rem;
 }
 
-#todo__form{
+#todo__form {
   display: flex;
 }
 

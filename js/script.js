@@ -3,6 +3,9 @@ function insertListItem(task, completed = false, isSaved = false) {
   const newItemDeleteButton = document.createElement('span');
   const newItemCheckbox = document.createElement('input');
   
+  newItem.dataset.completed = completed;
+  newItem.dataset.text = task;
+
   newItemDeleteButton.textContent = '🗑️';
   newItem.classList.add('list__item');
   newItem.innerHTML = `${task}`;
@@ -16,7 +19,6 @@ function insertListItem(task, completed = false, isSaved = false) {
   newItem.prepend(newItemCheckbox);
   newItem.appendChild(newItemDeleteButton);
   deleteItemListener(newItemDeleteButton);
-  markItemAsCompletedListener(newItemCheckbox); 
 
   if (!isSaved) {
     saveElement({
@@ -24,13 +26,6 @@ function insertListItem(task, completed = false, isSaved = false) {
       'completed': false,
     });
   };
-
-};
-
-function markItemAsCompletedListener(element) {
-  element.addEventListener('click', function() {
-    toggleElementAsCompleted(element.parentElement);
-  });
 };
 
 function deleteItemListener(element) {
@@ -40,9 +35,24 @@ function deleteItemListener(element) {
   });
 };
 
+function deleteElement(element) {
+  const elements = getElements();
+  const item = element.closest('li');
+  const text = item.dataset.text;
+  const completed = item.dataset.completed;
+
+  const filteredItems = elements.items.filter(savedItem => savedItems.text !== text);
+  saveElements({
+    items: savedItems
+  })
+
+}
+
 function toggleElementAsCompleted(element) {
   const checkbox = element.querySelector('input[type=checkbox]');
+  const isCompleted = element.dataset.completed;
   element.classList.toggle('list__item--completed');
+  element.dataset.completed = (isCompleted === 'true') ? 'false' : 'true';
 };
 
 function getElements() {
